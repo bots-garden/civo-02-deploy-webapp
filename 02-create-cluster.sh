@@ -13,4 +13,3 @@ civo kubernetes create ${CLUSTER_NAME} \
 --nodes=${CLUSTER_NODES} \
 --region=${CLUSTER_REGION} \
 --wait
-./02
