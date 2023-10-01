@@ -4,7 +4,7 @@ export KUBECONFIG=$PWD/config/k3s.yaml
 
 CLUSTER_NAME="first-cluster"
 CLUSTER_NODES=1
-CLUSTER_SIZE="g4s.kube.xsmall"
+CLUSTER_SIZE="g4s.kube.small"
 CLUSTER_REGION="FRA1"
 
 # Create the cluster

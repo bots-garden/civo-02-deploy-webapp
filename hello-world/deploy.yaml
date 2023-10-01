@@ -41,7 +41,7 @@ metadata:
   name: demo-hello-world
 spec:
   rules:
-    - host: demo-hello-world.49ef064a-6dc0-4c4a-b9c6-50b8cad90450.k8s.civo.com
+    - host: demo-hello-world.17d4505a-657f-4bbb-9779-8868f287b6a6.k8s.civo.com
       http:
         paths:
         - path: /
