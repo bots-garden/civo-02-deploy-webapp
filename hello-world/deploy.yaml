@@ -1,0 +1,53 @@
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-hello-world
+spec:
+  selector:
+    app: demo-hello-world
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-hello-world
+  template:
+    metadata:
+      labels:
+        app: demo-hello-world
+    spec:
+      containers:
+        - name: demo-hello-world
+          image: k33g/demo-hello-world:0.0.0
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+
+---
+# Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-hello-world
+spec:
+  rules:
+    - host: demo-hello-world.49ef064a-6dc0-4c4a-b9c6-50b8cad90450.k8s.civo.com
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service: 
+              name: demo-hello-world
+              port: 
+                number: 80
