@@ -41,7 +41,8 @@ metadata:
   name: demo-hello-world
 spec:
   rules:
-    - host: demo-hello-world.17d4505a-657f-4bbb-9779-8868f287b6a6.k8s.civo.com
+    #- host: demo-hello-world.17d4505a-657f-4bbb-9779-8868f287b6a6.k8s.civo.com
+    - host: demo-hello-world.74.220.29.63.sslip.io
       http:
         paths:
         - path: /
